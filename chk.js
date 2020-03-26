@@ -57,4 +57,4 @@ app.post("/sock",(req,res)=>{
 });
 
 console.log("Listening at Port 8080");
-server.listen(4000);
+server.listen(process.env.PORT ||  4000);

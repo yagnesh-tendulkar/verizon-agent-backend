@@ -52,7 +52,8 @@ app.post("/sock",(req,res)=>{
         JSON.stringify({event:req.body.event,data:req.body.data})
       );
   })
-  console.log("sadasd")   
+   res.send(true)
+	console.log("api called")   
 })
   
 

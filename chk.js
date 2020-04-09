@@ -62,7 +62,7 @@ app.get("/",(req,res)=>{
 	res.send("Hey! I am running.")
 })
 
-setTimeout(() => {
+setInterval(() => {
     console.log("Hey I am running")
 }, 10*1000);
 console.log("Listening at Port 8080");

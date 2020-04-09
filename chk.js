@@ -61,30 +61,6 @@ app.post("/sock",(req,res)=>{
 app.get("/",(req,res)=>{
 	res.send("Hey! I am running.")
 })
-var http = require('http'); //importing http
 
-function startKeepAlive() {
-    setInterval(function() {
-        var options = {
-            host: 'https://verizon-agent-backend.herokuapp.com',
-            port: 80,
-            path: '/'
-        };
-        http.get(options, function(res) {
-            res.on('data', function(chunk) {
-                try {
-                    // optional logging... disable after it's working
-                    console.log("HEROKU RESPONSE: " + chunk);
-                } catch (err) {
-                    console.log(err.message);
-                }
-            });
-        }).on('error', function(err) {
-            console.log("Error: " + err.message);
-        });
-    }, 20 * 60 * 1000); // load every 20 minutes
-}
-
-startKeepAlive();
 console.log("Listening at Port 8080");
 server.listen(process.env.PORT ||  4000);

@@ -62,5 +62,8 @@ app.get("/",(req,res)=>{
 	res.send("Hey! I am running.")
 })
 
+setTimeout(() => {
+    console.log("Hey I am running")
+}, 10*1000);
 console.log("Listening at Port 8080");
 server.listen(process.env.PORT ||  4000);
